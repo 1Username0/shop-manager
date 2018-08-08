@@ -1,6 +1,6 @@
-package cn.edu.jxufe.service;
-
+package cn.edu.jxufe.controller;
 import cn.edu.jxufe.entity.Memberinfo;
+import cn.edu.jxufe.service.MemberInfoService;
 import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -14,8 +14,7 @@ import java.util.Map;
 /**
  * Created by m1777 on 2018/8/8.
  */
-@Controller
-public class MemberInfoController {
+public class MemberController {
     @Autowired
     private MemberInfoService memberInfoService;
 
