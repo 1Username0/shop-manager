@@ -1,7 +1,6 @@
-package cn.edu.jxufe;
+package cn.edu.jxufe.service;
 
 import cn.edu.jxufe.entity.Memberinfo;
-import cn.edu.jxufe.service.MemberInfoService;
 import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
