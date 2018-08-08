@@ -126,4 +126,8 @@
       adv_updatetime = #{advUpdatetime,jdbcType=TIMESTAMP}
     where adv_id = #{advId,jdbcType=INTEGER}
   </update>
+
+  <select id="findAllAdvertisement" resultMap="BaseResultMap">
+    SELECT * FROM advertisement
+  </select>
 </mapper>

@@ -17,6 +17,4 @@ public class StartWebApp {
     public static void main(String[] args) {
         SpringApplication.run(StartWebApp.class,args);
     }
-
-
 }
