@@ -143,4 +143,8 @@
       amount_of_reading = #{amountOfReading,jdbcType=BIGINT}
     where article_id = #{articleId,jdbcType=INTEGER}
   </update>
+
+  <select id="findAllArticle" resultMap="BaseResultMap">
+    SELECT * FROM articleinfo
+  </select>
 </mapper>

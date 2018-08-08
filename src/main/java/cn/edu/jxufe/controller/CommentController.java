@@ -1,7 +1,7 @@
 package cn.edu.jxufe.controller;
 
-import cn.edu.jxufe.entity.Advertisement;
-import cn.edu.jxufe.service.AdvertisementService;
+import cn.edu.jxufe.entity.GoodsComment;
+import cn.edu.jxufe.service.CommentService;
 import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -13,24 +13,24 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Created by m1777 on 2018/8/7.
+ * Created by m1777 on 2018/8/8.
  */
 @Controller
-public class AdvertisementController {
+public class CommentController {
 
     @Autowired
-    private AdvertisementService advertisementService;
+    private CommentService commentService;
 
-    @RequestMapping("advertisement")
-    public String toAdvertisement(){
-        return "guanggao";
+    @RequestMapping("comment")
+    public String tocomment(){
+        return "pinglun";
     }
 
-    @RequestMapping("advertisementdata")
+    @RequestMapping("commentdata")
     @ResponseBody
-    public Object advertisementdata(@RequestParam(name="page",defaultValue = "1") int page,@RequestParam(name="rows",defaultValue = "10")int rows){
+    public Object commentdata(@RequestParam(name="page",defaultValue = "1") int page,@RequestParam(name="rows",defaultValue = "10")int rows){
         try {
-            PageInfo<Advertisement> data= advertisementService.finAll(page,rows);
+            PageInfo<GoodsComment> data= commentService.finAll(page, rows);
             Map map=new HashMap();
             map.put("total",data.getTotal());
             map.put("rows",data.getList());
@@ -40,6 +40,5 @@ public class AdvertisementController {
             return "{errmsg:"+e.getMessage()+"}";
         }
     }
-
 
 }

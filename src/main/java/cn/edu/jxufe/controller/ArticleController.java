@@ -1,7 +1,7 @@
 package cn.edu.jxufe.controller;
 
-import cn.edu.jxufe.entity.Advertisement;
-import cn.edu.jxufe.service.AdvertisementService;
+import cn.edu.jxufe.entity.Articleinfo;
+import cn.edu.jxufe.service.ArticleService;
 import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -13,24 +13,23 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Created by m1777 on 2018/8/7.
+ * Created by m1777 on 2018/8/8.
  */
 @Controller
-public class AdvertisementController {
-
+public class ArticleController {
     @Autowired
-    private AdvertisementService advertisementService;
+    private ArticleService articleService;
 
-    @RequestMapping("advertisement")
-    public String toAdvertisement(){
-        return "guanggao";
+    @RequestMapping("atricle")
+    public String toarticle(){
+        return "wenzhang";
     }
 
-    @RequestMapping("advertisementdata")
+    @RequestMapping("atricledata")
     @ResponseBody
-    public Object advertisementdata(@RequestParam(name="page",defaultValue = "1") int page,@RequestParam(name="rows",defaultValue = "10")int rows){
+    public Object articledata(@RequestParam(name="page",defaultValue = "1") int page,@RequestParam(name="rows",defaultValue = "10")int rows){
         try {
-            PageInfo<Advertisement> data= advertisementService.finAll(page,rows);
+            PageInfo<Articleinfo> data= articleService.finAll(page,rows);
             Map map=new HashMap();
             map.put("total",data.getTotal());
             map.put("rows",data.getList());
@@ -40,6 +39,4 @@ public class AdvertisementController {
             return "{errmsg:"+e.getMessage()+"}";
         }
     }
-
-
 }

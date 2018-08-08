@@ -221,4 +221,8 @@
       member_pic = #{memberPic,jdbcType=VARCHAR}
     where member_id = #{memberId,jdbcType=INTEGER}
   </update>
+
+  <select id="findAllMember" resultMap="BaseResultMap">
+    SELECT * FROM memberinfo
+  </select>
 </mapper>

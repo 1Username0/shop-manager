@@ -18,13 +18,13 @@
       <li>
         <span>饰品销售管理平台</span>
         <ul>
-          <li><span>会员管理</span></li>
-          <li><span>文章管理</span></li>
-          <li><span>评论管理</span></li>
+          <li><span><a href="memberinfo">会员管理</a></span></li>
+          <li><span><a href="atricle"> 文章管理</a></span></li>
+          <li><span><a href="comment">评论管理</a></span></li>
           <li><span>订单管理</span></li>
           <li><span><a href="advertisement"> 广告管理</a></span></li>
           <li><span>商品管理</span></li>
-          <li><span>类别管理</span></li>
+          <li><span><a href="goodscategory">类别管理</a> </span></li>
           <li><span>系统设置</span></li>
         </ul>
       </li>
