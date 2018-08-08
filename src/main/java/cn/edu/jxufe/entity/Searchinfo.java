@@ -26,7 +26,7 @@ public class Searchinfo implements Serializable {
     /**
      * 搜索时间
      */
-    private Date searchtime;
+    private String searchtime;
 
     private static final long serialVersionUID = 1L;
 
@@ -54,11 +54,11 @@ public class Searchinfo implements Serializable {
         this.memberId = memberId;
     }
 
-    public Date getSearchtime() {
+    public String getSearchtime() {
         return searchtime;
     }
 
-    public void setSearchtime(Date searchtime) {
+    public void setSearchtime(String searchtime) {
         this.searchtime = searchtime;
     }
 

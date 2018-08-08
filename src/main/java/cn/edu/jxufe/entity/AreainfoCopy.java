@@ -40,12 +40,12 @@ public class AreainfoCopy implements Serializable {
     /**
      * 创建时间
      */
-    private Long createTime;
+    private String createTime;
 
     /**
      * 修改时间
      */
-    private Long updateTime;
+    private String updateTime;
 
     /**
      * 是否热门（1代表热门城市）
@@ -102,19 +102,19 @@ public class AreainfoCopy implements Serializable {
         this.groupid = groupid;
     }
 
-    public Long getCreateTime() {
+    public String getCreateTime() {
         return createTime;
     }
 
-    public void setCreateTime(Long createTime) {
+    public void setCreateTime(String createTime) {
         this.createTime = createTime;
     }
 
-    public Long getUpdateTime() {
+    public String getUpdateTime() {
         return updateTime;
     }
 
-    public void setUpdateTime(Long updateTime) {
+    public void setUpdateTime(String updateTime) {
         this.updateTime = updateTime;
     }
 

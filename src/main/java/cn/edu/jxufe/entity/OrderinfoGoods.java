@@ -47,12 +47,12 @@ public class OrderinfoGoods implements Serializable {
     /**
      * 创建时间
      */
-    private Date createdTime;
+    private String createdTime;
 
     /**
      * 修改时间
      */
-    private Date updatedTime;
+    private String updatedTime;
 
     private static final long serialVersionUID = 1L;
 
@@ -112,19 +112,19 @@ public class OrderinfoGoods implements Serializable {
         this.goodsPayPrice = goodsPayPrice;
     }
 
-    public Date getCreatedTime() {
+    public String getCreatedTime() {
         return createdTime;
     }
 
-    public void setCreatedTime(Date createdTime) {
+    public void setCreatedTime(String createdTime) {
         this.createdTime = createdTime;
     }
 
-    public Date getUpdatedTime() {
+    public String getUpdatedTime() {
         return updatedTime;
     }
 
-    public void setUpdatedTime(Date updatedTime) {
+    public void setUpdatedTime(String updatedTime) {
         this.updatedTime = updatedTime;
     }
 

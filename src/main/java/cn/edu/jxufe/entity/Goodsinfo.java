@@ -106,12 +106,12 @@ public class Goodsinfo implements Serializable {
     /**
      * 商品修改时间
      */
-    private Date updateTime;
+    private String updateTime;
 
     /**
      * 商品上传时间
      */
-    private Date createTime;
+    private String createTime;
 
     private static final long serialVersionUID = 1L;
 
@@ -267,19 +267,19 @@ public class Goodsinfo implements Serializable {
         this.stock = stock;
     }
 
-    public Date getUpdateTime() {
+    public String getUpdateTime() {
         return updateTime;
     }
 
-    public void setUpdateTime(Date updateTime) {
+    public void setUpdateTime(String updateTime) {
         this.updateTime = updateTime;
     }
 
-    public Date getCreateTime() {
+    public String getCreateTime() {
         return createTime;
     }
 
-    public void setCreateTime(Date createTime) {
+    public void setCreateTime(String createTime) {
         this.createTime = createTime;
     }
 

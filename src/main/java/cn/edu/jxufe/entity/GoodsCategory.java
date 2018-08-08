@@ -33,12 +33,12 @@ public class GoodsCategory implements Serializable {
      */
     private Integer isOffline;
 
-    private Date createdTime;
+    private String createdTime;
 
     /**
      * 更新时间(自更新)
      */
-    private Date updatedTime;
+    private String updatedTime;
 
     private static final long serialVersionUID = 1L;
 
@@ -82,19 +82,19 @@ public class GoodsCategory implements Serializable {
         this.isOffline = isOffline;
     }
 
-    public Date getCreatedTime() {
+    public String getCreatedTime() {
         return createdTime;
     }
 
-    public void setCreatedTime(Date createdTime) {
+    public void setCreatedTime(String createdTime) {
         this.createdTime = createdTime;
     }
 
-    public Date getUpdatedTime() {
+    public String getUpdatedTime() {
         return updatedTime;
     }
 
-    public void setUpdatedTime(Date updatedTime) {
+    public void setUpdatedTime(String updatedTime) {
         this.updatedTime = updatedTime;
     }
 

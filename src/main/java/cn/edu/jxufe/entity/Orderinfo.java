@@ -36,7 +36,7 @@ public class Orderinfo implements Serializable {
     /**
      * 订单生成时间
      */
-    private Date addTime;
+    private String addTime;
 
     /**
      * 支付方式名称代码
@@ -46,12 +46,12 @@ public class Orderinfo implements Serializable {
     /**
      * 支付(付款)时间
      */
-    private Date paymentTime;
+    private String paymentTime;
 
     /**
      * 订单完成时间
      */
-    private Date finnshedTime;
+    private String finnshedTime;
 
     /**
      * 订单总价格
@@ -63,9 +63,9 @@ public class Orderinfo implements Serializable {
      */
     private Integer orderState;
 
-    private Date createdTime;
+    private String createdTime;
 
-    private Date updatedTime;
+    private String updatedTime;
 
     private static final long serialVersionUID = 1L;
 
@@ -109,11 +109,11 @@ public class Orderinfo implements Serializable {
         this.buyerTel = buyerTel;
     }
 
-    public Date getAddTime() {
+    public String getAddTime() {
         return addTime;
     }
 
-    public void setAddTime(Date addTime) {
+    public void setAddTime(String addTime) {
         this.addTime = addTime;
     }
 
@@ -125,19 +125,19 @@ public class Orderinfo implements Serializable {
         this.paymentCode = paymentCode;
     }
 
-    public Date getPaymentTime() {
+    public String getPaymentTime() {
         return paymentTime;
     }
 
-    public void setPaymentTime(Date paymentTime) {
+    public void setPaymentTime(String paymentTime) {
         this.paymentTime = paymentTime;
     }
 
-    public Date getFinnshedTime() {
+    public String getFinnshedTime() {
         return finnshedTime;
     }
 
-    public void setFinnshedTime(Date finnshedTime) {
+    public void setFinnshedTime(String finnshedTime) {
         this.finnshedTime = finnshedTime;
     }
 
@@ -157,19 +157,19 @@ public class Orderinfo implements Serializable {
         this.orderState = orderState;
     }
 
-    public Date getCreatedTime() {
+    public String getCreatedTime() {
         return createdTime;
     }
 
-    public void setCreatedTime(Date createdTime) {
+    public void setCreatedTime(String createdTime) {
         this.createdTime = createdTime;
     }
 
-    public Date getUpdatedTime() {
+    public String getUpdatedTime() {
         return updatedTime;
     }
 
-    public void setUpdatedTime(Date updatedTime) {
+    public void setUpdatedTime(String updatedTime) {
         this.updatedTime = updatedTime;
     }
 

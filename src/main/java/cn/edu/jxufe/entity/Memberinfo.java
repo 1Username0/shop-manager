@@ -26,7 +26,7 @@ public class Memberinfo implements Serializable {
     /**
      * 生日
      */
-    private Date memberBirthday;
+    private String memberBirthday;
 
     /**
      * 会员密码
@@ -51,17 +51,17 @@ public class Memberinfo implements Serializable {
     /**
      * 会员注册时间
      */
-    private Date createTime;
+    private String createTime;
 
     /**
      * 当前登录时间
      */
-    private Date memberLoginTime;
+    private String memberLoginTime;
 
     /**
      * 上次登录时间
      */
-    private Date memberOldLoginTime;
+    private String memberOldLoginTime;
 
     /**
      * 当前登录ip
@@ -114,11 +114,11 @@ public class Memberinfo implements Serializable {
         this.memberName = memberName;
     }
 
-    public Date getMemberBirthday() {
+    public String getMemberBirthday() {
         return memberBirthday;
     }
 
-    public void setMemberBirthday(Date memberBirthday) {
+    public void setMemberBirthday(String memberBirthday) {
         this.memberBirthday = memberBirthday;
     }
 
@@ -154,27 +154,27 @@ public class Memberinfo implements Serializable {
         this.memberLoginNum = memberLoginNum;
     }
 
-    public Date getCreateTime() {
+    public String getCreateTime() {
         return createTime;
     }
 
-    public void setCreateTime(Date createTime) {
+    public void setCreateTime(String createTime) {
         this.createTime = createTime;
     }
 
-    public Date getMemberLoginTime() {
+    public String getMemberLoginTime() {
         return memberLoginTime;
     }
 
-    public void setMemberLoginTime(Date memberLoginTime) {
+    public void setMemberLoginTime(String memberLoginTime) {
         this.memberLoginTime = memberLoginTime;
     }
 
-    public Date getMemberOldLoginTime() {
+    public String getMemberOldLoginTime() {
         return memberOldLoginTime;
     }
 
-    public void setMemberOldLoginTime(Date memberOldLoginTime) {
+    public void setMemberOldLoginTime(String memberOldLoginTime) {
         this.memberOldLoginTime = memberOldLoginTime;
     }
 

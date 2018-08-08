@@ -41,12 +41,12 @@ public class Advertisement implements Serializable {
     /**
      * 广告的创建时间
      */
-    private Date advCratetime;
+    private String advCratetime;
 
     /**
      * 广告的修改时间
      */
-    private Date advUpdatetime;
+    private String advUpdatetime;
 
     private static final long serialVersionUID = 1L;
 
@@ -98,19 +98,19 @@ public class Advertisement implements Serializable {
         this.advLinkUrl = advLinkUrl;
     }
 
-    public Date getAdvCratetime() {
+    public String getAdvCratetime() {
         return advCratetime;
     }
 
-    public void setAdvCratetime(Date advCratetime) {
+    public void setAdvCratetime(String advCratetime) {
         this.advCratetime = advCratetime;
     }
 
-    public Date getAdvUpdatetime() {
+    public String getAdvUpdatetime() {
         return advUpdatetime;
     }
 
-    public void setAdvUpdatetime(Date advUpdatetime) {
+    public void setAdvUpdatetime(String advUpdatetime) {
         this.advUpdatetime = advUpdatetime;
     }
 

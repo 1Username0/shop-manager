@@ -26,7 +26,7 @@ public class Collectioninfo implements Serializable {
     /**
      * 搜藏时间
      */
-    private Date cTime;
+    private String cTime;
 
     private static final long serialVersionUID = 1L;
 
@@ -54,11 +54,11 @@ public class Collectioninfo implements Serializable {
         this.goodsid = goodsid;
     }
 
-    public Date getcTime() {
+    public String getcTime() {
         return cTime;
     }
 
-    public void setcTime(Date cTime) {
+    public void setcTime(String cTime) {
         this.cTime = cTime;
     }
 
