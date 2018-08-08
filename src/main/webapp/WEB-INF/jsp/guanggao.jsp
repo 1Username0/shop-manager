@@ -12,8 +12,8 @@
                 {field:'advOrder',title:'排位',width:200,align:'center'},
                 {field:'advLinkUrl',title:'广告连接地址',width:300,align:'center'},
                 {field:'advOffline',title:'广告状态',width:100,align:'center'},
-                {field:'advCratetime',title:'创建时间',width:300,align:'center'},
-                {field:'advUpdatetime',title:'更新时间时间',width:300,align:'center'}
+                {field:'advCratetime',title:'创建时间',width:315,align:'center'},
+                {field:'advUpdatetime',title:'更新时间',width:315,align:'center'}
             ]],
             url:"advertisementdata",
             pagination:true,
@@ -25,7 +25,7 @@
             },'-',{
                 iconCls: 'icon-cancel',
                 text:"批量删除",
-                handler: function(){alert('帮助按钮')}
+                handler: function(){alert('批量删除')}
             }]
 
         })

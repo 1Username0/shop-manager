@@ -22,7 +22,7 @@
           <li><span>文章管理</span></li>
           <li><span>评论管理</span></li>
           <li><span>订单管理</span></li>
-          <li><span><a href="Advertisement"> 广告管理</a></span></li>
+          <li><span><a href="advertisement"> 广告管理</a></span></li>
           <li><span>商品管理</span></li>
           <li><span>类别管理</span></li>
           <li><span>系统设置</span></li>
