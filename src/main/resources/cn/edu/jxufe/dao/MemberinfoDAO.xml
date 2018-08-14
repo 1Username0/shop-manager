@@ -24,17 +24,17 @@
     member_ww, member_login_num, create_time, member_login_time, member_old_login_time, 
     member_login_ip, member_old_login_ip, is_sell, member_state, member_pic
   </sql>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+  <select id="findMemberinfoById" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
     from memberinfo
     where member_id = #{memberId,jdbcType=INTEGER}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+  <delete id="deleteMemberinfoById" parameterType="java.lang.Integer">
     delete from memberinfo
     where member_id = #{memberId,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="cn.edu.jxufe.entity.Memberinfo">
+  <insert id="insertMemberinfo" parameterType="cn.edu.jxufe.entity.Memberinfo">
     insert into memberinfo (member_id, member_mobile, member_name, 
       member_birthday, member_passwd, member_email, 
       member_ww, member_login_num, create_time, 
@@ -151,7 +151,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="cn.edu.jxufe.entity.Memberinfo">
+  <update id="updateMemberinfoById" parameterType="cn.edu.jxufe.entity.Memberinfo">
     update memberinfo
     <set>
       <if test="memberMobile != null">
@@ -224,5 +224,13 @@
 
   <select id="findAllMember" resultMap="BaseResultMap">
     SELECT * FROM memberinfo
+  </select>
+
+  <select id="findMemberinfoByProperty" resultMap="BaseResultMap">
+    SELECT * FROM memberinfo WHERE ${propertyName} like  Concat('%',#{propertyValue},'%')
+  </select>
+
+  <select id="findMemberinfoByTime" resultMap="BaseResultMap">
+    SELECT * FROM memberinfo WHERE member_login_time>=#{startTime} AND #{endTime}>=member_login_time
   </select>
 </mapper>

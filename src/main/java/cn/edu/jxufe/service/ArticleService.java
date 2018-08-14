@@ -10,5 +10,18 @@ import java.util.List;
  */
 public interface ArticleService {
     List<Articleinfo> findAll();
+
     PageInfo<Articleinfo> finAll(int page,int rows);
+
+    Articleinfo findArticleinfoByIdService(int id);
+
+    boolean deleteArticleinfoByIdService(int id);
+
+    boolean insertArticleinfoService(Articleinfo articleinfo);
+
+    boolean updateArticleinfoByIdService(Articleinfo articleinfo);
+
+    PageInfo<Articleinfo> findArticleinfoByProperty(String propertyeName,String propertyvalue,int page,int rows);
+
+    PageInfo<Articleinfo> findArticleinfoByTime(int startTime,int endTime,int page,int rows);
 }

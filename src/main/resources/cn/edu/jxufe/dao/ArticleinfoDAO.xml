@@ -20,7 +20,7 @@
   <sql id="Blob_Column_List">
     article_content
   </sql>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="ResultMapWithBLOBs">
+  <select id="findArticleinfoById" parameterType="java.lang.Integer" resultMap="ResultMapWithBLOBs">
     select 
     <include refid="Base_Column_List" />
     ,
@@ -28,11 +28,11 @@
     from articleinfo
     where article_id = #{articleId,jdbcType=INTEGER}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+  <delete id="deleteArticleinfoById" parameterType="java.lang.Integer">
     delete from articleinfo
     where article_id = #{articleId,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="cn.edu.jxufe.entity.Articleinfo">
+  <insert id="insertArticleinfo" parameterType="cn.edu.jxufe.entity.Articleinfo">
     insert into articleinfo (article_id, article_pic_url, article_show, 
       article_title, create_time, update_time, 
       amount_of_reading, article_content)
@@ -95,7 +95,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="cn.edu.jxufe.entity.Articleinfo">
+  <update id="updateArticleinfoById" parameterType="cn.edu.jxufe.entity.Articleinfo">
     update articleinfo
     <set>
       <if test="articlePicUrl != null">
@@ -146,5 +146,13 @@
 
   <select id="findAllArticle" resultMap="BaseResultMap">
     SELECT * FROM articleinfo
+  </select>
+
+  <select id="findArticleinfooByProperty" resultMap="BaseResultMap">
+    SELECT * FROM articleinfo WHERE ${propertyName} like  Concat('%',#{propertyValue},'%')
+  </select>
+
+  <select id="findArticleinfoByTime" resultMap="BaseResultMap">
+    SELECT * FROM articleinfo WHERE amount_of_reading>=#{startTime} AND #{endTime}>=amount_of_reading
   </select>
 </mapper>

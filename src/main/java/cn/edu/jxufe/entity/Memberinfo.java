@@ -1,6 +1,7 @@
 package cn.edu.jxufe.entity;
 
 import java.io.Serializable;
+import java.security.Timestamp;
 import java.util.Date;
 
 /**
@@ -56,7 +57,7 @@ public class Memberinfo implements Serializable {
     /**
      * 当前登录时间
      */
-    private String memberLoginTime;
+    private Date memberLoginTime;
 
     /**
      * 上次登录时间
@@ -76,12 +77,12 @@ public class Memberinfo implements Serializable {
     /**
      * 会员是否有发布商品权限 1为开启 0为关闭
      */
-    private Boolean isSell;
+    private String isSell;
 
     /**
      * 会员的开启状态 1为开启 0为关闭
      */
-    private Boolean memberState;
+    private String memberState;
 
     /**
      * 会员头像
@@ -162,11 +163,11 @@ public class Memberinfo implements Serializable {
         this.createTime = createTime;
     }
 
-    public String getMemberLoginTime() {
+    public Date getMemberLoginTime() {
         return memberLoginTime;
     }
 
-    public void setMemberLoginTime(String memberLoginTime) {
+    public void setMemberLoginTime(Date memberLoginTime) {
         this.memberLoginTime = memberLoginTime;
     }
 
@@ -194,19 +195,19 @@ public class Memberinfo implements Serializable {
         this.memberOldLoginIp = memberOldLoginIp;
     }
 
-    public Boolean getIsSell() {
+    public String getIsSell() {
         return isSell;
     }
 
-    public void setIsSell(Boolean isSell) {
+    public void setIsSell(String isSell) {
         this.isSell = isSell;
     }
 
-    public Boolean getMemberState() {
+    public String getMemberState() {
         return memberState;
     }
 
-    public void setMemberState(Boolean memberState) {
+    public void setMemberState(String memberState) {
         this.memberState = memberState;
     }
 

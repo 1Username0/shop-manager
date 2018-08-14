@@ -21,7 +21,7 @@ public class Articleinfo implements Serializable {
     /**
      * 是否显示，0为否，1为是，默认为1
      */
-    private Boolean articleShow;
+    private String articleShow;
 
     /**
      * 标题
@@ -66,11 +66,11 @@ public class Articleinfo implements Serializable {
         this.articlePicUrl = articlePicUrl;
     }
 
-    public Boolean getArticleShow() {
+    public String getArticleShow() {
         return articleShow;
     }
 
-    public void setArticleShow(Boolean articleShow) {
+    public void setArticleShow(String articleShow) {
         this.articleShow = articleShow;
     }
 

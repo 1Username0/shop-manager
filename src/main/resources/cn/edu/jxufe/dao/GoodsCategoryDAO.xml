@@ -13,17 +13,17 @@
   <sql id="Base_Column_List">
     cat_id, cat_name, sort, description, is_offline, created_time, updated_time
   </sql>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+  <select id="findGoodsCategoryById" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
     from goods_category
     where cat_id = #{catId,jdbcType=INTEGER}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+  <delete id="deleteGoodsCategoryById" parameterType="java.lang.Integer">
     delete from goods_category
     where cat_id = #{catId,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="cn.edu.jxufe.entity.GoodsCategory">
+  <insert id="insertGoodsCategory" parameterType="cn.edu.jxufe.entity.GoodsCategory">
     insert into goods_category (cat_id, cat_name, sort, 
       description, is_offline, created_time, 
       updated_time)
@@ -80,7 +80,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="cn.edu.jxufe.entity.GoodsCategory">
+  <update id="updateGoodsCategoryById" parameterType="cn.edu.jxufe.entity.GoodsCategory">
     update goods_category
     <set>
       <if test="catName != null">
@@ -117,5 +117,13 @@
 
   <select id="findAllGoodsCategory" resultMap="BaseResultMap">
     SELECT * FROM goods_category
+  </select>
+
+  <select id="findGoodsCategoryByProperty" resultMap="BaseResultMap">
+    SELECT * FROM goods_category WHERE ${propertyName} like  Concat('%',#{propertyValue},'%')
+  </select>
+
+  <select id="findGoodsCategoryByTime" resultMap="BaseResultMap">
+    SELECT * FROM goods_category WHERE sort>=#{startTime} AND #{endTime}>=sort
   </select>
 </mapper>

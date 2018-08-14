@@ -16,17 +16,17 @@
     scomm_id, goodis_id, scomm_content, scomm_memberid, scomm_membername, scomm_memberavatar, 
     scomm_time, create_time, update_time
   </sql>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+  <select id="findGoodsCommentById" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
     from goods_comment
     where scomm_id = #{scommId,jdbcType=INTEGER}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+  <delete id="deleteGoodsCommentById" parameterType="java.lang.Integer">
     delete from goods_comment
     where scomm_id = #{scommId,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="cn.edu.jxufe.entity.GoodsComment">
+  <insert id="insertGoodsComment" parameterType="cn.edu.jxufe.entity.GoodsComment">
     insert into goods_comment (scomm_id, goodis_id, scomm_content, 
       scomm_memberid, scomm_membername, scomm_memberavatar, 
       scomm_time, create_time, update_time
@@ -97,7 +97,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="cn.edu.jxufe.entity.GoodsComment">
+  <update id="updateGoodsCommentById" parameterType="cn.edu.jxufe.entity.GoodsComment">
     update goods_comment
     <set>
       <if test="goodisId != null">
@@ -142,5 +142,13 @@
 
   <select id="findAllComment" resultMap="BaseResultMap">
     SELECT * FROM goods_comment
+  </select>
+
+  <select id="findGoodsCommentByProperty" resultMap="BaseResultMap">
+    SELECT * FROM goods_comment WHERE ${propertyName} like  Concat('%',#{propertyValue},'%')
+  </select>
+
+  <select id="findGoodsCommentoByTime" resultMap="BaseResultMap">
+    SELECT * FROM goods_comment WHERE scomm_time>=#{startTime} AND #{endTime}>=scomm_time
   </select>
 </mapper>

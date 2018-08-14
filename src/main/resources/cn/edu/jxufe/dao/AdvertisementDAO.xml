@@ -15,17 +15,17 @@
     adv_id, adv_title, adv_pic_url, adv_offline, adv_order, adv_link_url, adv_cratetime, 
     adv_updatetime
   </sql>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+  <select id="findAdvertisementById" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
     from advertisement
     where adv_id = #{advId,jdbcType=INTEGER}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+  <delete id="deleteAdvertisementById" parameterType="java.lang.Integer" >
     delete from advertisement
     where adv_id = #{advId,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="cn.edu.jxufe.entity.Advertisement">
+  <insert id="insertAdvertisement" parameterType="cn.edu.jxufe.entity.Advertisement">
     insert into advertisement (adv_id, adv_title, adv_pic_url, 
       adv_offline, adv_order, adv_link_url, 
       adv_cratetime, adv_updatetime)
@@ -88,7 +88,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="cn.edu.jxufe.entity.Advertisement">
+  <update id="updateAdvertisementById" parameterType="cn.edu.jxufe.entity.Advertisement">
     update advertisement
     <set>
       <if test="advTitle != null">
@@ -115,7 +115,7 @@
     </set>
     where adv_id = #{advId,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="cn.edu.jxufe.entity.Advertisement">
+  <update id="update" parameterType="cn.edu.jxufe.entity.Advertisement">
     update advertisement
     set adv_title = #{advTitle,jdbcType=VARCHAR},
       adv_pic_url = #{advPicUrl,jdbcType=VARCHAR},
@@ -129,5 +129,13 @@
 
   <select id="findAllAdvertisement" resultMap="BaseResultMap">
     SELECT * FROM advertisement
+  </select>
+
+  <select id="findAdvertisementByProperty" resultMap="BaseResultMap">
+    SELECT * FROM advertisement WHERE ${propertyName} like  Concat('%',#{propertyValue},'%')
+  </select>
+
+  <select id="findAdvertisementByTime" resultMap="BaseResultMap">
+    SELECT * FROM advertisement WHERE adv_cratetime>=#{startTime} AND #{endTime}>=adv_cratetime
   </select>
 </mapper>

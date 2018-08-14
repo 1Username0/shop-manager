@@ -26,7 +26,7 @@ public class Advertisement implements Serializable {
     /**
      * 广告是否禁用(0禁用 1启用)
      */
-    private Short advOffline;
+    private String advOffline;
 
     /**
      * 广告的序号
@@ -41,7 +41,7 @@ public class Advertisement implements Serializable {
     /**
      * 广告的创建时间
      */
-    private String advCratetime;
+    private Date advCratetime;
 
     /**
      * 广告的修改时间
@@ -74,11 +74,11 @@ public class Advertisement implements Serializable {
         this.advPicUrl = advPicUrl;
     }
 
-    public Short getAdvOffline() {
+    public String getAdvOffline() {
         return advOffline;
     }
 
-    public void setAdvOffline(Short advOffline) {
+    public void setAdvOffline(String advOffline) {
         this.advOffline = advOffline;
     }
 
@@ -98,11 +98,11 @@ public class Advertisement implements Serializable {
         this.advLinkUrl = advLinkUrl;
     }
 
-    public String getAdvCratetime() {
+    public Date getAdvCratetime() {
         return advCratetime;
     }
 
-    public void setAdvCratetime(String advCratetime) {
+    public void setAdvCratetime(Date advCratetime) {
         this.advCratetime = advCratetime;
     }
 

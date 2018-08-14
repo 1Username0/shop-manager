@@ -14,7 +14,7 @@ import java.util.List;
  * Created by m1777 on 2018/8/8.
  */
 @Service
-public class ArticleServiceImpl implements ArticleService{
+public class ArticleServiceImpl implements ArticleService {
 
     @Autowired
     private ArticleinfoDAO articleinfoDAO;
@@ -31,4 +31,41 @@ public class ArticleServiceImpl implements ArticleService{
         PageInfo<Articleinfo> pagevo=new PageInfo(data);
         return pagevo;
     }
+
+    @Override
+    public Articleinfo findArticleinfoByIdService(int id) {
+        return articleinfoDAO.findArticleinfoById(id);
+    }
+
+    @Override
+    public boolean deleteArticleinfoByIdService(int id) {
+        return articleinfoDAO.deleteArticleinfoById(id);
+    }
+
+    @Override
+    public boolean insertArticleinfoService(Articleinfo articleinfo) {
+        return articleinfoDAO.insertArticleinfo(articleinfo);
+    }
+
+    @Override
+    public boolean updateArticleinfoByIdService(Articleinfo articleinfo) {
+        return articleinfoDAO.updateArticleinfoById(articleinfo);
+    }
+
+    @Override
+    public PageInfo<Articleinfo> findArticleinfoByProperty(String propertyeName, String propertyvalue, int page, int rows) {
+        PageHelper.startPage(page, rows);
+        List<Articleinfo> data=articleinfoDAO.findArticleinfooByProperty(propertyeName, propertyvalue);
+        PageInfo<Articleinfo> pagevo=new PageInfo(data);
+        return pagevo;
+    }
+
+    @Override
+    public PageInfo<Articleinfo> findArticleinfoByTime(int startTime, int endTime, int page, int rows) {
+        PageHelper.startPage(page, rows);
+        List<Articleinfo> data=articleinfoDAO.findArticleinfoByTime(startTime,endTime);
+        PageInfo<Articleinfo> pagevo=new PageInfo(data);
+        return pagevo;
+    }
+
 }

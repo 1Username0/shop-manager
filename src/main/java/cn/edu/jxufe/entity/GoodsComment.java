@@ -1,6 +1,7 @@
 package cn.edu.jxufe.entity;
 
 import java.io.Serializable;
+import java.util.Date;
 
 /**
  * goods_comment
@@ -40,7 +41,7 @@ public class GoodsComment implements Serializable {
     /**
      * 评论时间
      */
-    private String scommTime;
+    private Date scommTime;
 
     /**
      * 创建时间
@@ -102,11 +103,11 @@ public class GoodsComment implements Serializable {
         this.scommMemberavatar = scommMemberavatar;
     }
 
-    public String getScommTime() {
+    public Date getScommTime() {
         return scommTime;
     }
 
-    public void setScommTime(String scommTime) {
+    public void setScommTime(Date scommTime) {
         this.scommTime = scommTime;
     }
 

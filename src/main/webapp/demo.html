@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="easyui/js/jquery-1.4.4.min.js"></script>
+    <script src="easyui/js/ajaxform.js"></script>
+    <script>
+        $(function(){
+            $("#aj").click(function(){
+                $("#pic").ajaxSubmit({
+                    success:function(){
+                        alert("成功")
+                        $.post("savead",{title:$("#title").val(),link:$("#link").val(),url:data},function(){
+                            alert('提交成功');
+                        })
+                    }
+                });
+            })
+        })
+    </script>
+</head>
+<body>
+<input type="text" name="title" id="title">
+<input type="text" name="link" id="link">
+
+<form id="pic" action="udloadimage1" method="post" enctype="multipart/form-data">
+    <label>
+    <input type="file" name="f" style="display:none;"/>
+    <img src="upload/91703dc0-c861-4987-8049-c3502d9a4811捕获1.PNG" width="100">
+    </label>
+
+    <input type="submit" name="s" value="上传">
+    <a href="javascript:void(0)" id="aj">ajax提交</a>
+</form>
+
+</body>
+</html>

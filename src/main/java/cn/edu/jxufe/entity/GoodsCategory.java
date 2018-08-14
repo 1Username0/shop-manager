@@ -31,7 +31,7 @@ public class GoodsCategory implements Serializable {
     /**
      * 类名是否禁用 0禁用。1表示启用
      */
-    private Integer isOffline;
+    private String isOffline;
 
     private String createdTime;
 
@@ -74,11 +74,11 @@ public class GoodsCategory implements Serializable {
         this.description = description;
     }
 
-    public Integer getIsOffline() {
+    public String getIsOffline() {
         return isOffline;
     }
 
-    public void setIsOffline(Integer isOffline) {
+    public void setIsOffline(String isOffline) {
         this.isOffline = isOffline;
     }
 
